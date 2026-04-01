@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VMR Jeeps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        header {
+            background: brown;
+            color: white;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .search-box input {
+            padding: 6px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .section {
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        /* GRID */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 130px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        button {
+            background: green;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* TABLET */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 576px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="IMG_7079.jpeg">
+            VMR Jeeps
+        </div>
+
+        <nav>
+            <a onclick="go('home')">Home</a>
+            <a onclick="go('buy')">Buy jeep</a>
+            <a onclick="go('sell')">Sell jeep</a>
+            <a onclick="go('rent')">Rent jeep</a>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search Jeeps" onkeyup="searchJeep()">
+        </div>
+    </header>
+
+    <!-- BUY -->
+    <div class="section" id="buy">
+        <h2>Buy Jeeps</h2>
+        <div class="container">
+
+            <!-- 15 BUY -->
+            <div class="card"><img src="IMG_7092.jpeg">
+                <h4>Mini Tractor</h4>
+                <p>₹12,00,000</p><button onclick="buy('Mini Tractor')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_1626.jpeg">
+                <h4>Wrangler</h4>
+                <p>₹60,00,000</p><button onclick="buy('Wrangler')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_0767.jpeg">
+                <h4>Scorpio</h4>
+                <p>₹15,00,000</p><button onclick="buy('Scorpio')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7196.jpeg">
+                <h4>Gurkha</h4>
+                <p>₹14,50,000</p><button onclick="buy('Gurkha')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_0766.jpeg">
+                <h4>Fortuner</h4>
+                <p>₹35,00,000</p><button onclick="buy('Fortuner')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7083.jpeg">
+                <h4>Bolero Neo</h4>
+                <p>₹10,00,000</p><button onclick="buy('Bolero Neo')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7088.jpeg">
+                <h4>Thar</h4>
+                <p>₹13,50,000</p><button onclick="buy('Thar')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7088.jpeg">
+                <h4>V Cross</h4>
+                <p>₹25,00,000</p><button onclick="buy('V Cross')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7195.jpeg">
+                <h4>Safari</h4>
+                <p>₹20,00,000</p><button onclick="buy('Safari')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7095.JPG.jpeg">
+                <h4>Endeavour</h4>
+                <p>₹40,00,000</p><button onclick="buy('Endeavour')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7095.JPG.jpeg">
+                <h4>Thar Modified</h4>
+                <p>₹18,00,000</p><button onclick="buy('Thar Modified')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_0192.jpeg">
+                <h4>Rubicon</h4>
+                <p>₹70,00,000</p><button onclick="buy('Rubicon')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_0192.jpeg">
+                <h4>Scorpio N</h4>
+                <p>₹17,00,000</p><button onclick="buy('Scorpio N')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7095.JPG.jpeg">
+                <h4>Bolero</h4>
+                <p>₹9,00,000</p><button onclick="buy('Bolero')">Buy</button>
+            </div>
+            <div class="card"><img src="IMG_7088.jpeg">
+                <h4>Gurkha 4x4</h4>
+                <p>₹16,00,000</p><button onclick="buy('Gurkha 4x4')">Buy</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SELL -->
+    <div class="section" id="sell">
+        <h2>Sell Jeep</h2>
+        <div class="contact-box">
+            <p>Sell your jeep easily</p>
+            <button onclick="sell()">Sell Now</button>
+        </div>
+    </div>
+
+    <!-- RENT -->
+    <div class="section" id="rent">
+        <h2>Rent Jeeps</h2>
+        <div class="container">
+
+            <!-- 15 RENT -->
+            <div class="card"><img src="Transformer.jpeg">
+                <h4>Thar</h4>
+                <p>₹3000/day</p><button onclick="rent('Thar')">Rent</button>
+            </div>
+            <div class="card"><img src="White zeep.jpeg">
+                <h4>Scorpio</h4>
+                <p>₹2500/day</p><button onclick="rent('Scorpio')">Rent</button>
+            </div>
+            <div class="card"><img src="mini tractor.jpeg">
+                <h4>Fortuner</h4>
+                <p>₹5000/day</p><button onclick="rent('Fortuner')">Rent</button>
+            </div>
+            <div class="card"><img src="red fergusion.jpeg">
+                <h4>Gurkha</h4>
+                <p>₹3500/day</p><button onclick="rent('Gurkha')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_8294.jpeg">
+                <h4>Wrangler</h4>
+                <p>₹7000/day</p><button onclick="rent('Wrangler')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_0767.jpeg">
+                <h4>Bolero</h4>
+                <p>₹2000/day</p><button onclick="rent('Bolero')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7083.jpeg">
+                <h4>Safari</h4>
+                <p>₹3000/day</p><button onclick="rent('Safari')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7083.jpeg">
+                <h4>Endeavour</h4>
+                <p>₹6000/day</p><button onclick="rent('Endeavour')">Rent</button>
+            </div>
+            <div class="card"><img src="9752pic.jpeg">
+                <h4>Convertible</h4>
+                <p>₹4000/day</p><button onclick="rent('Convertible')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7088.jpeg">
+                <h4>Scorpio N</h4>
+                <p>₹3500/day</p><button onclick="rent('Scorpio N')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7088.jpeg">
+                <h4>Offroad Gurkha</h4>
+                <p>₹4500/day</p><button onclick="rent('Offroad Gurkha')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7095.JPG.jpeg">
+                <h4>Legender</h4>
+                <p>₹6500/day</p><button onclick="rent('Legender')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7195.jpeg">
+                <h4>Camper</h4>
+                <p>₹2200/day</p><button onclick="rent('Camper')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7196.jpeg">
+                <h4>Pickup</h4>
+                <p>₹3000/day</p><button onclick="rent('Pickup')">Rent</button>
+            </div>
+            <div class="card"><img src="IMG_7079.jpeg">
+                <h4>Wrangler Sport</h4>
+                <p>₹7500/day</p><button onclick="rent('Wrangler Sport')">Rent</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+            <p><strong>VMR Jeeps</strong></p>
+            <p>📞 8330988264</p>
+            <p>📧 vmrjeeps@gmail.com</p>
+        </div>
+    </div>
+
+    <footer style="background:#222;color:white;text-align:center;padding:20px;">
+        <h3>VMR Jeeps Hyderabad</h3>
+        <p>Buy | Sell | Rent Jeeps Across India</p>
+        <p>© 2026 All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function go(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+        function searchJeep() {
+            let input = document.querySelector("input").value.toLowerCase();
+            let cards = document.querySelectorAll(".card");
+            cards.forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(input) ? "block" : "none";
+            });
+        }
+        function buy(name) { window.open("https://wa.me/918330988264?text=I want to buy " + name); }
+        function rent(name) { window.open("https://wa.me/918330988264?text=I want to rent " + name); }
+        function sell() { window.open("https://wa.me/918330988264?text=I want to sell my jeep"); }
+    </script>
+
+</body>
+
+</html>
